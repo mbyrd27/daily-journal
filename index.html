@@ -16,14 +16,31 @@
 
         <!-- Two-column form -->
         <section class="formContainer">
-        <form action="" class="entryForm">
+        <form class="entryForm">
             <!-- Left column for date, concepts, mood fields -->
             <div class="entryForm--left">
-
+                <label for="entryDate">Date</label>
+                <input type="date" id="entryDate" name="entryDate">
+                <label for="concepts">Concepts Covered: </label>
+                <input type="text" id="concepts"  name="concepts">
+                <label for="mood">Today's Mood: </label>
+                <select name="mood" id="mood">
+                    <option value="Anxious">Anxious</option>
+                    <option value="Nervous">Nervous</option>
+                    <option value="Optimistic">Optimistic</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Excited">Excited</option>
+                    <option value="Content">Content</option>
+                </select>
             </div>
             <!-- Right column for journal entry (textfield) -->
             <div class="entryForm--right">
-
+                <label for="journalText">Journal Entry</label>
+                <textarea id="journalText" name="journalText" rows="8" cols="30">
+                </textarea>
+                <button class="btn" type="button">
+                    <input type="submit" value="Record Journal Entry">
+                </button>
             </div>
         </form>
         </section>

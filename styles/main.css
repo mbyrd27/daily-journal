@@ -18,3 +18,22 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: 2px;
 }
 
+
+.entryForm {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    
+}
+
+.entryForm--left {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.entryForm--right {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
