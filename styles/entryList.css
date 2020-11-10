@@ -1,0 +1,11 @@
+.entries {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    border: 2px dotted red;
+}
+
+.entry {
+    border: 1px solid green;
+    width: 30%;
+}

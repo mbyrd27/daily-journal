@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import 'form.css';
+@import 'entryList.css';
 
 /*Typography
 -----------------------------------------------------------------*/
@@ -18,36 +20,7 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: 2px;
 }
 
-
-.entryForm {
+header {
     display: flex;
     justify-content: center;
-    border: 1px solid red; 
-}
-
-.entryForm--left {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem;
-    padding: 1rem;
-}
-
-.entryForm--right {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem;
-    padding: 1rem;
-}
-
-.entryForm--item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 1.5rem;
-}
-
-label {
-    font-family: Arial;
-    color: black;
-    font-weight: bold;
 }
