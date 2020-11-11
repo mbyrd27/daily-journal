@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt's Journal</title>
     <link rel="stylesheet" href="./styles/main.css">
-</head>
+    <script src="https://kit.fontawesome.com/48963fbc70.js" crossorigin="anonymous"></script>
 <body>
 
     <main id="container">
@@ -15,39 +15,40 @@
         </header>
 
         <!-- Two-column form -->
-        <section class="formContainer">
-        <form class="entryForm">
+        <section class="formSection">
+            <form class="entryForm">
             <!-- Left column for date, concepts, mood fields -->
-            <div class="entryForm--left">
-                <div class="entryForm--item">
-                    <label for="entryDate">Date</label>
-                    <input type="date" id="entryDate" name="entryDate">
+                <div class="entryForm--left">
+                    <div class="entryForm--item">
+                        <label for="entryDate">Date:</label>
+                        <input type="date" id="entryDate" name="entryDate">
+                    </div>
+                    <div class="entryForm--item">
+                        <label for="concepts">Concepts Covered: </label>
+                        <input type="text" id="concepts"  name="concepts">
+                    </div>
+                    <div class="entryForm--item">
+                        <label for="mood">Today's Mood: </label>
+                        <select name="mood" id="mood">
+                            <option value="Excited">Excited</option>
+                            <option value="Nervous">Nervous</option>
+                            <option value="Optimistic">Optimistic</option>
+                            <option value="Sad">Sad</option>
+                            <option value="Anxious">Anxious</option>
+                            <option value="Content">Content</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="entryForm--item">
-                    <label for="concepts">Concepts Covered: </label>
-                    <input type="text" id="concepts"  name="concepts">
-                </div>
-                <div class="entryForm--item">
-                    <label for="mood">Today's Mood: </label>
-                    <select name="mood" id="mood">
-                        <option value="Excited">Excited</option>
-                        <option value="Nervous">Nervous</option>
-                        <option value="Optimistic">Optimistic</option>
-                        <option value="Sad">Sad</option>
-                        <option value="Anxious">Anxious</option>
-                        <option value="Content">Content</option>
-                    </select>
-                </div>
-            </div>
+            
             <!-- Right column for journal entry (textfield) -->
-            <div class="entryForm--right">
-                <label for="journalText">Journal Entry</label>
-                <textarea id="journalText" name="journalText" rows="8" cols="30">
-                </textarea>
-                <button class="btn" type="submit">Record Journal Entry
-                </button>
-            </div>
-        </form>
+                <div class="entryForm--right">
+                    <label for="journalText">Journal Entry</label>
+                    <textarea id="journalText" name="journalText" rows="8" cols="30">
+                    </textarea>
+                    <button class="btn" type="submit">Record Journal Entry
+                    </button>
+                </div>
+            </form>
         </section>
 
         <!-- Unordered List to hold journal entries -->
@@ -55,42 +56,47 @@
         <ul class="entries">
             <li class="entry">
                 <p class="entry-date">11/7/2020</p>
-                <p class="entry-concepts">Wireframing</p>
-                <p class="entry-mood">Nervous</p>
+                <p class="entry-concepts"><span class="heading">Concept(s): </span>Wireframing</p>
+                <p class="entry-mood"><span class="heading">Today's Mood: </span>Nervous</p>
                 <p class="entry-content">Began wireframing and laying out first
                     journal entry. This is filler text. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                 </p>
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button>
+                <div class="btn-holder">
+                    <button class="entry-btn edit">Edit</button>
+                    <button class="entry-btn delete">Delete</button>
+                </div>
             </li>
 
             <li class="entry">
                 <p class="entry-date">11/8/2020</p>
-                <p class="entry-concepts">Writing Semantic HTML elements</p>
-                <p class="entry-mood">Optimistic</p>
+                <p class="entry-concepts"><span class="heading">Concept(s): </span>Writing Semantic HTML elements</p>
+                <p class="entry-mood"><span class="heading">Today's Mood: </span>Optimistic</p>
                 <p class="entry-content">Started building semantic HTML elements to hold journal entries.
                 </p>
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button>
+                <div class="btn-holder">
+                    <button class="entry-btn edit">Edit</button>
+                    <button class="entry-btn delete">Delete</button>
+                </div>
             </li>
 
             <li class="entry">
                 <p class="entry-date">11/10/2020</p>
-                <p class="entry-concepts">Styling with CSS FlexBox</p>
-                <p class="entry-mood">Content</p>
+                <p class="entry-concepts"><span class="heading">Concept(s): </span>Styling with CSS FlexBox</p>
+                <p class="entry-mood"><span class="heading">Today's Mood: </span>Content</p>
                 <p class="entry-content">Tinkered with styling. This is still a work in progress. TODO: Explore media queries.
                 </p>
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button>
+                <div class="btn-holder">
+                    <button class="entry-btn edit">Edit</button>
+                    <button class="entry-btn delete">Delete</button>
+                </div>
             </li>
         </ul>
         </section>
 
         <!-- Footer  -->
         <footer class="footer">
-            <p class="footer-name">Matt Byrd</p>
-            <p class="footer-copyright">C</p>
-            <p class="footer-link"><a href="https://github.com/mbyrd27">My GitHub</a></p>
+            <p class="footer-name">&#169 Matt Byrd</p>
+            <p class="footer-link"><a href="https://github.com/mbyrd27"><i class="fab fa-github"></i></a></p>
         </footer>
 
     </main>

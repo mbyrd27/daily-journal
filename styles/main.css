@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import 'form.css';
 @import 'entryList.css';
+@import 'footer.css';
 
 /*Typography
 -----------------------------------------------------------------*/
@@ -11,8 +12,9 @@ select,
 textarea {
     color: #404040;
     font-family: "Roboto", Arial, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.4;
+    box-sizing: border-box;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -20,7 +22,17 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: 2px;
 }
 
+#container {
+    width: 90%;
+    max-width: 1800px;
+    margin: auto;
+}
+
 header {
     display: flex;
     justify-content: center;
+}
+
+button {
+    cursor: pointer;
 }

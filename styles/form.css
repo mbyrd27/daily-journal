@@ -1,7 +1,16 @@
+/*.formContainer {
+    border: 1px solid rgb(4, 68, 108);
+    margin: 0 30%;
+    background-color: rgb(227, 226, 225, .5);
+}
+*/
+
 .entryForm {
     display: flex;
     justify-content: center;
+    border: 1px solid red;
 }
+
 
 .entryForm--left {
     display: flex;
@@ -31,5 +40,11 @@ label {
 }
 
 .btn {
-    margin: 0.5rem 3rem;
+    margin: 1rem 1rem;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    background-color: rgb(4, 68, 108);
+    color: white;
+    font-weight: bold;
+    border: none;
 }

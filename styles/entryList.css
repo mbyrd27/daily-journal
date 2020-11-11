@@ -2,10 +2,78 @@
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    border: 2px dotted red;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: rgb(4, 68, 108, .7);
 }
 
 .entry {
-    border: 1px solid green;
+    border: 2px solid rgb(252, 140, 52);
+    border-radius: 3px;
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: rgb(250, 249, 247);
+}
+
+.entry-date {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(252, 140, 52);
+    background-color: rgb(4, 68, 108);
+    margin: 3px;
+    padding: 2px;
+    border: 2px solid rgb(252, 140, 52);
+    border-radius: 2px;
+}
+
+.entry-mood {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(4, 68, 108);
+}
+
+.entry-content {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.heading {
+    font-family: Arial;
+    font-weight: bold;
+    color: rgb(4, 68, 108);
+}
+
+.btn-holder {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+}
+
+.entry-btn {
+    margin: 0 1rem;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.edit {
+    background-color: rgb(4, 68, 108);
+    color: white;
+}
+
+.edit:hover {
+    background-color: rgb(4, 60, 90)
+}
+
+.delete {
+    background-color: rgb(252, 140, 52);
+    color: white;
+}
+
+.delete:hover {
+    background-color: rgb(189, 91, 16);
 }

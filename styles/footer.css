@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.footer-name {
+    border-right: 1px solid black;
+    padding-right: 0.5rem;
+    padding-top: 2px;
+    
+}
+
+i {
+    font-size: 25px;
+    color: black;
+    padding-left: 5px;
+}
+
