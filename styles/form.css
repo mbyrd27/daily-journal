@@ -1,16 +1,10 @@
-/*.formContainer {
-    border: 1px solid rgb(4, 68, 108);
-    margin: 0 30%;
-    background-color: rgb(227, 226, 225, .5);
-}
-*/
 
 .entryForm {
     display: flex;
     justify-content: center;
-    border: 1px solid red;
+    border: 2px solid rgb(252, 140, 52);
+    background-color: rgb(237, 237, 237, 0.8);
 }
-
 
 .entryForm--left {
     display: flex;
@@ -26,11 +20,68 @@
     padding: 1rem;
 }
 
+/* @media screen and (max-width: 630px) {
+
+    .entryForm {
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid rgb(252, 140, 52);
+        background-color: rgb(237, 237, 237, 0.8);
+    }
+
+    .entryForm--left {
+        display: flex;
+        flex-direction: column;
+        margin: 0rem;
+        padding: 0rem;
+    }
+
+    .entryForm--right {
+        display: flex;
+        flex-direction: column;
+        margin: 0rem;
+        padding: 0rem;
+    }
+} */
+
 .entryForm--item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 630px) {
+
+    .entryForm {
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid rgb(252, 140, 52);
+        background-color: rgb(237, 237, 237, 0.8);
+        padding-top: 5px;
+    }
+
+    .entryForm--left {
+        display: flex;
+        flex-direction: column;
+        margin: 0rem;
+        padding: 0rem;
+    }
+
+    .entryForm--right {
+        display: flex;
+        flex-direction: column;
+        margin: 0rem;
+        padding: 0rem;
+    }
+
+    .entryForm--item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
 }
 
 label {
@@ -48,3 +99,4 @@ label {
     font-weight: bold;
     border: none;
 }
+
