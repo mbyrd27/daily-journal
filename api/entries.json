@@ -1,0 +1,59 @@
+{
+    "entries": [
+        {
+            "id": 1,
+            "date": "11/7/2020",
+            "concept": "Wireframing",
+            "entry": "Began wireframing and laying out first journal entry. This is filler text. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+            "mood": "Nervous"
+        },
+    
+        {
+            "id": 2,
+            "date": "11/8/2020",
+            "concept": "Writing Semantic HTML elements",
+            "entry": "Started building semantic HTML elements to hold journal entries.",
+            "mood": "Optimistic"
+        },
+    
+        {
+            "id": 3,
+            "date": "11/10/2020",
+            "concept": "Styling with CSS FlexBox",
+            "entry": "Tinkered with styling. This is still a work in progress. TODO: Explore media queries.",
+            "mood": "Content"
+        },
+    
+        {
+            "id": 4,
+            "date": "11/11/2020",
+            "concept": "Styling",
+            "entry": "Something",
+            "mood": "Anxious"
+        },
+    
+        {
+            "id": 5,
+            "date": "11/12/2020",
+            "concept": "CSS Styling",
+            "entry": "Got media queries to work!",
+            "mood": "Optimistic"
+        },
+    
+        {
+            "id": 6,
+            "date": "11/13/2020",
+            "concept": "JS Modules",
+            "entry": "Exploring the single responsibility principle",
+            "mood": "Content"
+        },
+    
+        {
+            "id": 7,
+            "date": "11/16/2020",
+            "concept": "JS Modules/ JS Functions",
+            "entry":"Additional component practice. Trying to apply knowledge with what I am also learning by reading Eloquent JavaScript",
+            "mood": "Nervous"
+        }
+    ]
+}
