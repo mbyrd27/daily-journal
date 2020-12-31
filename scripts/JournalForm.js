@@ -1,4 +1,25 @@
+import { saveEntry } from './JournalDataProvider.js'
+
 const targetElement = document.querySelector('.entryList')
+const eventHub = document.querySelector('#container')
+
+eventHub.addEventListener('click', clickEvent => {
+    if (clickEvent.target.id === 'addEntry') {
+        const entryDate = document.querySelector('#entryDate')
+        const entryConcepts = document.querySelector('#concepts')
+        const entryMood = document.querySelector('#mood')
+        const entryContent = document.querySelector('#journalText')
+
+        const entryObj = {
+            date: entryDate.value,
+            concept: entryConcepts.value,
+            entry: entryContent.value,
+            mood: entryMood.value
+        }
+
+        saveEntry(entryObj);
+    }
+})
 
 
 export const JournalForm = () => {
@@ -33,7 +54,7 @@ export const JournalForm = () => {
                     <label for="journalText">Journal Entry</label>
                     <textarea id="journalText" name="journalText" rows="8" cols="30">
                     </textarea>
-                    <button class="btn" type="submit">Record Journal Entry
+                    <button class="btn" type="submit" id="addEntry">Record Journal Entry
                     </button>
                 </div>
             </form>
