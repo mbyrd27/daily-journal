@@ -1,4 +1,5 @@
 import { saveEntry } from './JournalDataProvider.js'
+import { getMoods, useMoods } from './MoodDataProvider.js'
 
 const targetElement = document.querySelector('.entryList')
 const eventHub = document.querySelector('#container')
@@ -14,15 +15,22 @@ eventHub.addEventListener('click', clickEvent => {
             date: entryDate.value,
             concept: entryConcepts.value,
             entry: entryContent.value,
-            mood: entryMood.value
+            moodId: parseInt(entryMood.value)
         }
 
         saveEntry(entryObj);
     }
 })
 
-
 export const JournalForm = () => {
+    getMoods()
+        .then(() => {
+            const allMoods = useMoods();
+            renderForm(allMoods);
+        })
+}
+
+const renderForm = (mood) => {
     targetElement.insertAdjacentHTML('beforebegin', `
     <section class="formSection">
             <form class="entryForm">
@@ -39,12 +47,18 @@ export const JournalForm = () => {
                     <div class="entryForm--item">
                         <label for="mood">Today's Mood: </label>
                         <select name="mood" id="mood">
+                        <!-- 
                             <option value="Excited">Excited</option>
                             <option value="Nervous">Nervous</option>
                             <option value="Optimistic">Optimistic</option>
                             <option value="Sad">Sad</option>
                             <option value="Anxious">Anxious</option>
-                            <option value="Content">Content</option>
+                            <option value="Content">Content</option>-->
+                        ${
+                            mood.map(feeling => {
+                                return `<option value="${feeling.id}">${feeling.label}</option>`
+                            }).join('')
+                        }
                         </select>
                     </div>
                 </div>
