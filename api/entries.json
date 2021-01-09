@@ -5,56 +5,96 @@
       "date": "11/7/2020",
       "concept": "Wireframing",
       "entry": "Began wireframing and laying out first journal entry. This is filler text. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
-      "mood": "Nervous"
+      "moodId": 2
     },
     {
       "id": 2,
       "date": "11/8/2020",
       "concept": "Writing Semantic HTML elements",
       "entry": "Started building semantic HTML elements to hold journal entries.",
-      "mood": "Optimistic"
+      "moodId": 3
     },
     {
       "id": 3,
       "date": "11/10/2020",
       "concept": "Styling with CSS FlexBox",
       "entry": "Tinkered with styling. This is still a work in progress. TODO: Explore media queries.",
-      "mood": "Content"
+      "moodId": 6
     },
     {
       "id": 4,
       "date": "11/11/2020",
       "concept": "Styling",
       "entry": "Something",
-      "mood": "Anxious"
+      "moodId": 5
     },
     {
       "id": 5,
       "date": "11/12/2020",
       "concept": "CSS Styling",
       "entry": "Got media queries to work!",
-      "mood": "Optimistic"
+      "moodId": 3
     },
     {
       "id": 6,
       "date": "11/13/2020",
       "concept": "JS Modules",
       "entry": "Exploring the single responsibility principle",
-      "mood": "Content"
+      "moodId": 6
     },
     {
       "id": 7,
       "date": "11/16/2020",
       "concept": "JS Modules/ JS Functions",
       "entry": "Additional component practice. Trying to apply knowledge with what I am also learning by reading Eloquent JavaScript",
-      "mood": "Nervous"
+      "moodId": 2
     },
     {
       "date": "2020-12-31",
       "concept": "API State Changes",
       "entry": " Happy New Year y'all!",
-      "mood": "Excited",
+      "moodId": 1,
       "id": 8
+    },
+    {
+      "date": "2021-01-08",
+      "concept": "The expand JSON server query parameter",
+      "entry": "This is confusing                  ",
+      "moodId": 5,
+      "id": 9
+    },
+    {
+      "date": "2021-01-08",
+      "concept": "Edit note from earlier tonight",
+      "entry": "JSON server is pretty cool. I think I understand better after reviewing documentation on the subject.             ",
+      "moodId": 6,
+      "id": 10
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "Excited"
+    },
+    {
+      "id": 2,
+      "label": "Nervous"
+    },
+    {
+      "id": 3,
+      "label": "Optimistic"
+    },
+    {
+      "id": 4,
+      "label": "Sad"
+    },
+    {
+      "id": 5,
+      "label": "Anxious"
+    },
+    {
+      "id": 6,
+      "label": "Content"
     }
   ]
 }
