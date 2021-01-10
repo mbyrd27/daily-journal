@@ -8,7 +8,7 @@ export const journalEntry = (entry) => {
         </p>
         <div class="btn-holder">
             <button class="entry-btn edit">Edit</button>
-            <button class="entry-btn delete">Delete</button>
+            <button id="deleteEntry--${entry.id}"class="entry-btn delete">Delete</button>
         </div>
     </li>
     `
