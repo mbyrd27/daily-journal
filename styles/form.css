@@ -20,29 +20,15 @@
     padding: 1rem;
 }
 
-/* @media screen and (max-width: 630px) {
+fieldset {
+    border-color: rgb(252, 140, 52);
+}
 
-    .entryForm {
-        display: flex;
-        flex-wrap: wrap;
-        border: 2px solid rgb(252, 140, 52);
-        background-color: rgb(237, 237, 237, 0.8);
-    }
-
-    .entryForm--left {
-        display: flex;
-        flex-direction: column;
-        margin: 0rem;
-        padding: 0rem;
-    }
-
-    .entryForm--right {
-        display: flex;
-        flex-direction: column;
-        margin: 0rem;
-        padding: 0rem;
-    }
-} */
+legend {
+    font-family: Arial;
+    font-weight: bold;
+    color: navy;
+}
 
 .entryForm--item {
     display: flex;
