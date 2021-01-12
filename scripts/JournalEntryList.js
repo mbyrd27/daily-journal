@@ -26,3 +26,14 @@ eventHub.addEventListener('click', clickEvent => {
             })
     }
 })
+
+eventHub.addEventListener('radioSelected', e => {
+    //console.log(typeof(e.detail.moodId));
+    getEntries().then(() => {
+        const allEntries = useJournalEntries();
+        entryLog.innerHTML = allEntries.filter(entry => entry.moodId === parseInt(e.detail.moodId))
+            .map(entry => journalEntry(entry));
+        //entryLog.innerHTML = allEntries.map(entry => {
+            //entry.filter(jrnlEntry => jrnlEntry.moodId === e.detail.moodId)
+        })
+    })
