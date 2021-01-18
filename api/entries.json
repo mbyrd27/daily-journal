@@ -69,6 +69,27 @@
       "entry": "JSON server is pretty cool. I think I understand better after reviewing documentation on the subject.             ",
       "moodId": 6,
       "id": 10
+    },
+    {
+      "date": "2021-01-16",
+      "concept": "Tagging stuff",
+      "entry": "Learning how to tag stuff                    ",
+      "moodId": 5,
+      "id": 11
+    },
+    {
+      "date": "2021-01-18",
+      "concept": "Async JS",
+      "entry": "Trying to figure out what is returned with .then()                    ",
+      "moodId": 2,
+      "id": 12
+    },
+    {
+      "date": "2021-01-18",
+      "concept": "More async stuff",
+      "entry": "Second test                   ",
+      "moodId": 5,
+      "id": 13
     }
   ],
   "moods": [
@@ -95,6 +116,82 @@
     {
       "id": 6,
       "label": "Content"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "subject": "API"
+    },
+    {
+      "id": 2,
+      "subject": "CSS"
+    },
+    {
+      "id": 3,
+      "subject": "Components"
+    },
+    {
+      "id": 4,
+      "subject": "Functions"
+    },
+    {
+      "id": 5,
+      "subject": "Event Listners"
+    },
+    {
+      "subject": "Tags",
+      "id": 6
+    },
+    {
+      "subject": "Async",
+      "id": 7
+    },
+    {
+      "subject": "Promises",
+      "id": 8
+    }
+  ],
+  "entrytags": [
+    {
+      "id": 1,
+      "entryId": 6,
+      "tagId": 3
+    },
+    {
+      "id": 2,
+      "entryId": 3,
+      "tagId": 2
+    },
+    {
+      "id": 3,
+      "entryId": 4,
+      "tagId": 2
+    },
+    {
+      "id": 4,
+      "entryId": 5,
+      "tagId": 2
+    },
+    {
+      "entryId": 12,
+      "tagId": 6,
+      "id": 5
+    },
+    {
+      "entryId": 12,
+      "tagId": 7,
+      "id": 6
+    },
+    {
+      "entryId": 13,
+      "tagId": 6,
+      "id": 7
+    },
+    {
+      "entryId": 13,
+      "tagId": 8,
+      "id": 8
     }
   ]
 }

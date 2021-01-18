@@ -1,5 +1,6 @@
-const eventHub = document.querySelector('.container')
+const eventHub = document.querySelector('#container')
 let journal = []
+export let entryId = null
 
 const dispatchChangeEvent = () => {
     const entriesChangeEvent = new CustomEvent('entryAdded')
@@ -31,8 +32,11 @@ export const saveEntry = entry => {
         },
         body: JSON.stringify(entry)
     })
+    .then(resp => resp.json())
+    .then(parsedEntries => {entryId = parsedEntries.id})
     .then(getEntries)
     .then(dispatchChangeEvent)
+    
 }
 
 export const deleteEntry = entry => {

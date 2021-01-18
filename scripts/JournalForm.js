@@ -1,8 +1,14 @@
+import {saveTag, findTag } from './TagProvider.js'
 import { saveEntry } from './JournalDataProvider.js'
 import { getMoods, useMoods } from './MoodDataProvider.js'
+import {entryId} from './JournalDataProvider.js'
+import { newTagId, saveEntryTag } from './TagProvider.js'
+
+
 
 const targetElement = document.querySelector('.entryList')
 const eventHub = document.querySelector('#container')
+
 
 eventHub.addEventListener('click', clickEvent => {
     if (clickEvent.target.id === 'addEntry') {
@@ -10,6 +16,8 @@ eventHub.addEventListener('click', clickEvent => {
         const entryConcepts = document.querySelector('#concepts')
         const entryMood = document.querySelector('#mood')
         const entryContent = document.querySelector('#journalText')
+        const tagList = document.querySelector('#tags').value.split(', ')
+        //console.log(tagList)
 
         const entryObj = {
             date: entryDate.value,
@@ -17,8 +25,32 @@ eventHub.addEventListener('click', clickEvent => {
             entry: entryContent.value,
             moodId: parseInt(entryMood.value)
         }
-
-        saveEntry(entryObj);
+        
+        saveEntry(entryObj)
+            .then(() => {
+                tagList.forEach(tag => {
+                    findTag(tag)
+                        .then(matches => {
+                            let matchingTagId = null
+        
+                            if(matches.length > 0) {
+                                matchingTagId = matches[0].id
+                            }
+        
+                            if (matchingTagId === null) {
+                                saveTag({'subject': tag})
+                                    .then(resp => {
+                                        saveEntryTag(entryId, resp.id)
+                                       
+                                    })
+                            }
+                            else {
+                                saveEntryTag(entryId, matchingTagId)
+                            }
+                        })
+                })
+            })
+            
     }
 })
 
@@ -61,6 +93,10 @@ const renderForm = (mood) => {
                         }
                         </select>
                     </div>
+                    <div class="entryForm--item">
+                        <label for="tags">Tags</label>
+                        <input type="text" id="tags" name="tags">
+                    </div>
                 </div>
             
             <!-- Right column for journal entry (textfield) -->
@@ -68,7 +104,7 @@ const renderForm = (mood) => {
                     <label for="journalText">Journal Entry</label>
                     <textarea id="journalText" name="journalText" rows="8" cols="30">
                     </textarea>
-                    <button class="btn" type="submit" id="addEntry">Record Journal Entry
+                    <button class="btn" id="addEntry" type="button">Record Journal Entry
                     </button>
                 </div>
             </form>

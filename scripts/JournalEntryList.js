@@ -18,7 +18,7 @@ EntryListComponent();
 eventHub.addEventListener('click', clickEvent => {
     if (clickEvent.target.id.startsWith('deleteEntry--')) {
         const [prefix, id] = clickEvent.target.id.split('--')
-        console.log(id)
+        //console.log(id)
         deleteEntry(id)
             .then(() => {
                 const entries = useJournalEntries();
