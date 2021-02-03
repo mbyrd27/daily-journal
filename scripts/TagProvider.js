@@ -1,4 +1,5 @@
 let tags = []
+let entryTags = []
 export let newTagId = null
 
 export const getTags = () => {
@@ -18,8 +19,6 @@ export const saveTag = tag => {
         body: JSON.stringify(tag)
     })
     .then(resp => resp.json())
-    //.then(parsedResp => {newTagId = parsedResp.id})
-    //.then(getTags)
 }
 
 export const findTag = (subject) => {
@@ -27,14 +26,6 @@ export const findTag = (subject) => {
         .then(response => response.json())
 }
 
-/*export const getEntryTag = () => {
-    return fetch('http://localhost:8088/entryTags')
-        .then(resp => resp.json())
-        .then(apiEntryTag => entryTags = apiEntryTag)
-}
-
-export const useEntryTag = () => entryTags.slice()
-*/
 export const saveEntryTag = (entry, tag) => {
     const entryTags = {
         entryId: entry,
@@ -47,5 +38,10 @@ export const saveEntryTag = (entry, tag) => {
         },
         body: JSON.stringify(entryTags)
     })
-    //.then(getEntryTag)
 }
+
+export const getEntryTags = () => fetch('http://localhost:8088/entrytags')
+    .then(resp => resp.json())
+    .then(data => entryTags = data)
+
+export const useEntryTags = () => entryTags.slice()

@@ -1,13 +1,23 @@
 import { deleteEntry, getEntries, useJournalEntries } from './JournalDataProvider.js'
+import { getEntryTags, useEntryTags, getTags, useTags } from './TagProvider.js'
 import { journalEntry } from './JournalEntry.js'
 
 const entryLog = document.querySelector('.entries');
 const eventHub = document.querySelector('#container');
 
 const EntryListComponent = () => {
-    getEntries().then(() => {
+    getEntries()
+    .then(getEntryTags)
+    .then(getTags)
+    .then(() => {
         const entries = useJournalEntries();
-        entryLog.innerHTML += entries.map(entry => journalEntry(entry));
+        const entryTags = useEntryTags();
+        const tags = useTags();
+        entryLog.innerHTML += entries.map(entry => {
+            const filteredTags = entryTags.filter(et => et.entryId === entry.id)
+            .map(ft => tags.find(tag => ft.tagId === tag.id))
+            return journalEntry(entry, filteredTags)
+        }).join('')
     })
 }
 
@@ -18,7 +28,6 @@ EntryListComponent();
 eventHub.addEventListener('click', clickEvent => {
     if (clickEvent.target.id.startsWith('deleteEntry--')) {
         const [prefix, id] = clickEvent.target.id.split('--')
-        //console.log(id)
         deleteEntry(id)
             .then(() => {
                 const entries = useJournalEntries();
@@ -28,12 +37,9 @@ eventHub.addEventListener('click', clickEvent => {
 })
 
 eventHub.addEventListener('radioSelected', e => {
-    //console.log(typeof(e.detail.moodId));
     getEntries().then(() => {
         const allEntries = useJournalEntries();
         entryLog.innerHTML = allEntries.filter(entry => entry.moodId === parseInt(e.detail.moodId))
             .map(entry => journalEntry(entry));
-        //entryLog.innerHTML = allEntries.map(entry => {
-            //entry.filter(jrnlEntry => jrnlEntry.moodId === e.detail.moodId)
         })
     })
