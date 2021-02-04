@@ -1,6 +1,8 @@
-import { deleteEntry, getEntries, useJournalEntries } from './JournalDataProvider.js'
+import { deleteEntry, getEntries, useJournalEntries, updateEntry } from './JournalDataProvider.js'
+import { getMoods, useMoods } from './MoodDataProvider.js'
 import { getEntryTags, useEntryTags, getTags, useTags } from './TagProvider.js'
 import { journalEntry } from './JournalEntry.js'
+import { EditEntry } from './EditEntry.js'
 
 const entryLog = document.querySelector('.entries');
 const eventHub = document.querySelector('#container');
@@ -43,3 +45,35 @@ eventHub.addEventListener('radioSelected', e => {
             .map(entry => journalEntry(entry));
         })
     })
+
+eventHub.addEventListener('click', clickEvent => {
+    if (clickEvent.target.id.startsWith('editEntry--')) {
+        const [prefix, id] = clickEvent.target.id.split('--')
+        const contentTarget = document.querySelector(`#entry--${id}`)
+        getEntries()
+            .then(getMoods)
+            .then(getEntryTags)
+            .then(getTags)
+            .then(() => {
+                const entries = useJournalEntries()
+                const moods = useMoods()
+                const entryToEdit = entries.find(entry => entry.id === parseInt(id))
+                const tags = useTags()
+                const entryTags = useEntryTags()
+                const filteredTags = entryTags.filter(et => et.entryId === parseInt(id))
+                    .map(ft => tags.find(tag => ft.tagId === tag.id))
+                contentTarget.innerHTML = EditEntry(entryToEdit, moods, filteredTags)
+            })
+    }
+})
+
+// eventHub.addEventListener('click', clickEvent => {
+//     if (clickEvent.target.id.startsWith('saveEntry--')) {
+//         const [prefix, id] = clickEvent.target.id.split('--')
+//         updateEntry(id)
+//             .then(() => {
+//                 const entries = useJournalEntries();
+//                 entryLog.innerHTML = entries.map(entry => journalEntry(entry))
+//             })
+//     }
+// })

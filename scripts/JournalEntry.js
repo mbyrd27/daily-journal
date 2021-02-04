@@ -9,10 +9,11 @@ export const journalEntry = (entry, tags) => {
         ${tags.map(tag => `<em> #${tag.subject}</em>`)}
         </p> 
         <div class="btn-holder">
-            <button class="entry-btn edit">Edit</button>
+            <button id="editEntry--${entry.id}"class="entry-btn edit">Edit</button>
             <button id="deleteEntry--${entry.id}"class="entry-btn delete">Delete</button>
         </div>
     </li>
     `
 }
+
 

@@ -9,7 +9,7 @@ import { newTagId, saveEntryTag } from './TagProvider.js'
 const targetElement = document.querySelector('.entryList')
 const eventHub = document.querySelector('#container')
 
-
+//START HERE - turn this into a function and run it when saving an edited entry//
 eventHub.addEventListener('click', clickEvent => {
     if (clickEvent.target.id === 'addEntry') {
         const entryDate = document.querySelector('#entryDate')
@@ -17,7 +17,6 @@ eventHub.addEventListener('click', clickEvent => {
         const entryMood = document.querySelector('#mood')
         const entryContent = document.querySelector('#journalText')
         const tagList = document.querySelector('#tags').value.split(', ')
-        //console.log(tagList)
 
         const entryObj = {
             date: entryDate.value,

@@ -45,3 +45,14 @@ export const deleteEntry = entry => {
     })
     .then(getEntries)
 }
+
+export const updateEntry = entry => {
+    return fetch(`http://localhost:8088/entries/${entry}`, {
+        method: "PUT",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(getEntries)
+}
