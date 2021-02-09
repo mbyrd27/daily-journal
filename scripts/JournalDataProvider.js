@@ -56,3 +56,4 @@ export const updateEntry = entry => {
     })
     .then(getEntries)
 }
+

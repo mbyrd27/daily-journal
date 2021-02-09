@@ -45,3 +45,11 @@ export const getEntryTags = () => fetch('http://localhost:8088/entrytags')
     .then(data => entryTags = data)
 
 export const useEntryTags = () => entryTags.slice()
+
+export const deleteTags = entry => {
+    return fetch(`http://localhost:8088/entrytags?entryId=${entry}`, {
+        method: "DELETE"
+    })
+    .then(getTags)
+    .then(getEntryTags)
+}

@@ -2,7 +2,7 @@ import {saveTag, findTag } from './TagProvider.js'
 import { saveEntry } from './JournalDataProvider.js'
 import { getMoods, useMoods } from './MoodDataProvider.js'
 import {entryId} from './JournalDataProvider.js'
-import { newTagId, saveEntryTag } from './TagProvider.js'
+import { saveEntryTag } from './TagProvider.js'
 
 
 
@@ -12,18 +12,31 @@ const eventHub = document.querySelector('#container')
 //START HERE - turn this into a function and run it when saving an edited entry//
 eventHub.addEventListener('click', clickEvent => {
     if (clickEvent.target.id === 'addEntry') {
-        const entryDate = document.querySelector('#entryDate')
-        const entryConcepts = document.querySelector('#concepts')
-        const entryMood = document.querySelector('#mood')
-        const entryContent = document.querySelector('#journalText')
-        const tagList = document.querySelector('#tags').value.split(', ')
+        const selector = 'form'
+        updateEntry(selector)
+    }
+})
 
-        const entryObj = {
-            date: entryDate.value,
-            concept: entryConcepts.value,
-            entry: entryContent.value,
-            moodId: parseInt(entryMood.value)
-        }
+export const JournalForm = () => {
+    getMoods()
+        .then(() => {
+            const allMoods = useMoods();
+            renderForm(allMoods);
+        })
+}
+
+export const updateEntry = (entryIdentifier) => {
+    const entryDate = document.querySelector(`#entryDate--${entryIdentifier}`)
+    const entryConcepts = document.querySelector(`#concepts--${entryIdentifier}`)
+    const entryMood = document.querySelector(`#mood--${entryIdentifier}`)
+    const entryContent = document.querySelector(`#journalText--${entryIdentifier}`)
+    const tagList = document.querySelector(`#tags--${entryIdentifier}`).value.split(', ')
+    const entryObj = {
+        date: entryDate.value,
+        concept: entryConcepts.value,
+        entry: entryContent.value,
+        moodId: parseInt(entryMood.value)
+    }
         
         saveEntry(entryObj)
             .then(() => {
@@ -49,16 +62,6 @@ eventHub.addEventListener('click', clickEvent => {
                         })
                 })
             })
-            
-    }
-})
-
-export const JournalForm = () => {
-    getMoods()
-        .then(() => {
-            const allMoods = useMoods();
-            renderForm(allMoods);
-        })
 }
 
 const renderForm = (mood) => {
@@ -69,15 +72,15 @@ const renderForm = (mood) => {
                 <div class="entryForm--left">
                     <div class="entryForm--item">
                         <label for="entryDate">Date:</label>
-                        <input type="date" id="entryDate" name="entryDate">
+                        <input type="date" id="entryDate--form" name="entryDate">
                     </div>
                     <div class="entryForm--item">
                         <label for="concepts">Concepts Covered: </label>
-                        <input type="text" id="concepts"  name="concepts">
+                        <input type="text" id="concepts--form"  name="concepts">
                     </div>
                     <div class="entryForm--item">
                         <label for="mood">Today's Mood: </label>
-                        <select name="mood" id="mood">
+                        <select name="mood" id="mood--form">
                         <!-- 
                             <option value="Excited">Excited</option>
                             <option value="Nervous">Nervous</option>
@@ -94,14 +97,14 @@ const renderForm = (mood) => {
                     </div>
                     <div class="entryForm--item">
                         <label for="tags">Tags</label>
-                        <input type="text" id="tags" name="tags">
+                        <input type="text" id="tags--form" name="tags">
                     </div>
                 </div>
             
             <!-- Right column for journal entry (textfield) -->
                 <div class="entryForm--right">
                     <label for="journalText">Journal Entry</label>
-                    <textarea id="journalText" name="journalText" rows="8" cols="30">
+                    <textarea id="journalText--form" name="journalText" rows="8" cols="30">
                     </textarea>
                     <button class="btn" id="addEntry" type="button">Record Journal Entry
                     </button>
