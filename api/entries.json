@@ -69,6 +69,13 @@
       "entry": "Just found out that JSON server doesn't like delete requests using query parameters (?). Still tinkering with getting tags to load asynchronously.",
       "moodId": 4,
       "id": 13
+    },
+    {
+      "date": "2021-02-22",
+      "concept": "Debugging",
+      "entry": "Trying to figure out why tags aren't loading on submit.",
+      "moodId": 4,
+      "id": 14
     }
   ],
   "moods": [
@@ -161,6 +168,18 @@
     {
       "subject": "Await",
       "id": 16
+    },
+    {
+      "subject": "Debugging",
+      "id": 17
+    },
+    {
+      "subject": "Test2",
+      "id": 18
+    },
+    {
+      "subject": "Test3",
+      "id": 19
     }
   ],
   "entrytags": [
@@ -198,6 +217,16 @@
       "entryId": 13,
       "tagId": 16,
       "id": 8
+    },
+    {
+      "entryId": 14,
+      "tagId": 7,
+      "id": 9
+    },
+    {
+      "entryId": 14,
+      "tagId": 17,
+      "id": 10
     }
   ]
 }
